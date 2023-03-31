@@ -1,0 +1,146 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.nav-link{
+    color: red;
+    background-color: black;
+    padding: .5rem;
+    border-radius: 10%;
+    margin: 0 5px;
+    text-align: center;
+    gap: 1;
+}
+.nav-link:hover{
+    color:pink;
+}
+li>a[href="#"]{
+    background-color: white;
+    color:black;
+}
+.nav2{
+    width: 100%;
+}
+.nav2>div{
+    height: 50px;
+}
+div>.icon>a, .nav2>div>h2{
+    font-size: 2rem;
+    color: black;
+}
+.footer{
+    min-height: 5vh;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 0, 0, 0.679);
+}
+
+.footer>div>i{
+    font-size: 1.75rem;
+    margin: .3rem;
+    color: white;
+    background-color: black;
+    padding: .1rem .65rem;
+    border-radius: 100%;
+}
+.footer>div>h4{
+    padding: .5rem;
+    font-size: 1.5rem;
+    font-family: 'Tahoma';
+    font-weight: bolder;
+    margin-bottom: 0;
+}
+.check>label{
+    margin: 0 1.5rem;
+    color:white;
+    font-size: 1rem;
+}
+.check>label>input[type="checkbox"]{
+    margin: 0 5px
+}
+.card>.card-body>h5{
+    text-align: center;
+    font-weight: bold;
+}
+.navbar-toggler, .navbar-toggler-icon{
+    background-color: rgb(216, 65, 65);
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container>form>fieldset, .second{
+    border: 2px solid black;
+    width: 75%;
+}
+.container>form>fieldset>label{
+    font-family: 'Tahoma';
+    margin-bottom: 5px;
+}
+.container>form>fieldset>input[type="text"], .container>form>fieldset>input[type="email"]{
+    width: 100%;
+    margin-bottom: 1rem; 
+    padding: .2rem;
+}
+.second{
+    border: none;
+}
+.second>input[type="submit"]{
+    padding: .5rem 1rem;
+}
+.container>table{
+    width: 100%;
+}
+.container>table, td, th{
+    border: 1px solid black;
+    text-align: center;
+    font-family: 'Tahoma';
+}
+td{
+    padding: 1rem;
+}
+.data, .details-card, .card_container{
+    border: 2px solid black;
+
+}
+.card_container{
+    width: 70vw;
+    background-color: rgba(220, 20, 60, 0.725);
+    border-radius: 1rem;
+}
+.details-card{
+    width: 500px;
+    background-color: rgba(255, 255, 255, 0.834);
+}
+.details-card>img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.card-body>ul>li{
+    font-size: 1.25rem;
+}
+.table-container{
+    width: 100%;
+}
+.image_container>img{
+    object-fit: cover;
+    height: 200px;
+    
+}
+.card-title{
+    width: 100%;
+}
+.card-description{
+    font-size: 1rem;
+}
+main{
+    min-height: 85vh;
+}
+.details-card>ul{
+    list-style-type: none;
+}
