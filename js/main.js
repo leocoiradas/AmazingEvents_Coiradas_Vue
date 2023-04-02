@@ -4,15 +4,15 @@ const app = createApp({
         return {
             datosJson: '../data/amazing.json',
             arrEvents: [],
-            pastEvents: [],
-            upcomingEvents: [],
             categories:[],
             eventsFiltered: [],
+            categoriesFiltered:[],
             text: ''
         }
     },
     created() { 
         this.obtainData()
+        
     },
     methods: {
         async obtainData() {
@@ -20,9 +20,11 @@ const app = createApp({
             .then(response=>response.json())
             .then(datosJson=>{
                 this.arrEvents=datosJson.events
-                this.arrCopy= this.arrEvents
+               // console.log(this.arrEvents);
+                this.eventsFiltered= this.arrEvents
+                
                 this.obtainCategories(datosJson.events)
-            })
+            }).catch(error => console.log(error.message))
         },
         obtainCategories(array){
             array.forEach(element =>{
@@ -33,5 +35,18 @@ const app = createApp({
         }
         
     },
-computed: { }
+computed: { 
+    categoriesFilter(){
+        let firstStep= this.arrEvents.filter(element=> element.name.toLowerCase().includes(this.text.toLowerCase()))
+        //console.log(firstStep);
+       // console.log(this.categoriesFiltered);
+        if(this.categoriesFiltered.length==0){
+            this.eventsFiltered = firstStep
+            //console.log(this.eventsFiltered);
+        }else{
+            this.eventsFiltered= firstStep.filter(element=> this.categoriesFiltered.includes(element.category))
+            console.log(this.eventsFiltered);
+        }
+    }
+}
 }).mount('#app')

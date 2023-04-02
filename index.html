@@ -61,19 +61,23 @@
                     <a href="./html/upcoming_events.html"><i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
-            <div class="p-3">
-                <input type="text" class="form-control" placeholder="Type here what you're looking for." id="search">
-            </div>
-
-
-            <div class="d-flex flex-row flex-wrap justify-content-center align-items-center p-5 bg-white">
-                <div v-for="category of categories" class="form-check">
-                    <input class="form-check-input mx-2" type="checkbox" role="switch" :id="category" :value="category">
-                    <label class="form-check-label" :for="category">{{category}}</label>
+            <div>
+                <div class="p-3">
+                    
                 </div>
-            </div>
-            <div class="container-fluid d-flex justify-content-center flex-wrap p-3 gap-3" id="cards_box">
-                <div v-for="event of arrEvents" class="card m-2" style="width: 24rem;">
+
+
+                <div class="d-flex flex-row flex-wrap justify-content-center align-items-center p-5 bg-white">
+                    <input type="text" class="form-control" placeholder="Type here what you're looking for." v-model="text">
+                    {{categoriesFilter}}
+                    <div v-for="category of categories" class="form-check">
+                        <input class="form-check-input mx-2" type="checkbox" role="switch" :id="category"
+                            :value="category" v-model="categoriesFiltered">
+                        <label class="form-check-label" :for="category">{{category}}</label>
+                    </div>
+                </div>
+                <div class="container-fluid d-flex justify-content-center flex-wrap p-3 gap-3" id="cards_box">
+                    <div v-for="event of eventsFiltered" class="card m-2" style="width: 24rem;">
                         <div class="image_container">
                             <img :src="event.image" class="card-img-top" alt="event_image">
                         </div>
@@ -82,12 +86,14 @@
                             <p class="card-text my-2">{{event.date}}</p>
                             <p class="card-text text-center card-description"><i>{{event.description}}</i></p>
                             <a href="../html/details.html?id={{event._id}}" class="btn btn-primary">More Details</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-        </main>
+
     </div>
+    </main>
     <footer class="footer p-3">
         <div class="container p d-flex flex-wrap m-0">
             <i class="bi bi-instagram"></i>
@@ -103,7 +109,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script type="module" src="./js/main.js"></script>
+    <script src="./js/main.js"></script>
     <script src="./data/amazing.json"></script>
 </body>
 
