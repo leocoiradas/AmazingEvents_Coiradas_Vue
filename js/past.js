@@ -22,6 +22,7 @@ const app= createApp({
                 this.arrEvents=datosJson.events
                 this.currentDate=datosJson.currentDate
                 this.eventsFiltered=this.obtainPastEvents(this.arrEvents, this.currentDate)
+                console.log(this.eventsFiltered);
                 this.pastEvents=this.obtainPastEvents(this.arrEvents, this.currentDate)
                 this.obtainCategories(this.arrEvents)
                 console.log(this.eventsFiltered);
@@ -44,11 +45,8 @@ const app= createApp({
     computed:{
         categoriesFilter(){
             let firstStep= this.pastEvents.filter(element=> element.name.toLowerCase().includes(this.text.toLowerCase()))
-            //console.log(firstStep);
-           // console.log(this.categoriesFiltered);
             if(this.categoriesFiltered.length==0){
                 this.eventsFiltered = firstStep
-                //console.log(this.eventsFiltered);
             }else{
                 this.eventsFiltered= firstStep.filter(element=> this.categoriesFiltered.includes(element.category))
                 console.log(this.eventsFiltered);
