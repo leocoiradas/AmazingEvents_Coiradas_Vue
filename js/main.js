@@ -20,7 +20,6 @@ const app = createApp({
             .then(response=>response.json())
             .then(datosJson=>{
                 this.arrEvents=datosJson.events
-               // console.log(this.arrEvents);
                 this.eventsFiltered= this.arrEvents
                 
                 this.obtainCategories(datosJson.events)
