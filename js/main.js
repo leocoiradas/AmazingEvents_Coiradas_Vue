@@ -37,11 +37,8 @@ const app = createApp({
 computed: { 
     categoriesFilter(){
         let firstStep= this.arrEvents.filter(element=> element.name.toLowerCase().includes(this.text.toLowerCase()))
-        //console.log(firstStep);
-       // console.log(this.categoriesFiltered);
         if(this.categoriesFiltered.length==0){
             this.eventsFiltered = firstStep
-            //console.log(this.eventsFiltered);
         }else{
             this.eventsFiltered= firstStep.filter(element=> this.categoriesFiltered.includes(element.category))
             console.log(this.eventsFiltered);
